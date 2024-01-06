@@ -42,11 +42,12 @@ Edited the config file with something close to this:
 		      latitude:   3#.####
 		      longitude: -8#.####
 		    }
-		},
+		}
 ```
 <br>
 <b>DailyBibleVerse</b><br>
-https://github.com/arthurgarzajr/MMM-DailyBibleVerse
+https://github.com/arthurgarzajr/MMM-DailyBibleVerse<br>
+
 ```bash
 cd ~/MagicMirror/modules
 git clone https://github.com/arthurgarzajr/MMM-DailyBibleVerse.git
@@ -56,14 +57,14 @@ npm install
 
 Edited the config file by adding roughly this to it:
 ```javascript
-		{
+{
 			module: 'MMM-DailyBibleVerse',
 			position: 'bottom_bar',	// This can be any of the regions. Best result is in the bottom_bar as verses can take multiple lines in a day.
 			config: {
 				version: 'ESV', // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: https://www.biblegateway.com/versions/,
 		    	size: 'small' // default value is medium, but can be changed. 
 			}
-		}
+}
 ```
 
 
