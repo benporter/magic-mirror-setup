@@ -16,7 +16,7 @@ During the install process, two questions were asked and I said 'y' to both:
  - Do you want use pm2 for auto starting of your MagicMirror
 
 Upon completion, it printed this message:<br>
-We're ready! Run pm2 start MagicMirror from the ~/MagicMirror directory to start your MagicMirror.
+<i>We're ready! Run pm2 start MagicMirror from the ~/MagicMirror directory to start your MagicMirror.</i>
 
 # Module Installs
 
@@ -66,6 +66,49 @@ Edited the config file by adding roughly this to it:
 			}
 }
 ```
+
+<b>GoogleCalendar</b><br>
+https://github.com/randomBrainstormer/MMM-GoogleCalendar
+
+Step 1:  Install GoogleAPI dependency
+https://github.com/googleapis/google-api-nodejs-client
+
+```bash
+npm install googleapis
+```
+Step 2:  Install the module
+```bash
+git clone https://github.com/randomBrainstormer/MMM-GoogleCalendar.git
+cd MMM-GoogleCalendar
+npm install
+```
+Step 3:  Do lots of point and click things to get the Desktop OAuth client file from the authentication setup section
+
+The command line item to run was this, after the .json file had been renamed and moved to the MMM-GoogleCalendar folder:
+```bash
+cd ~/MagicMirror/modules/MMM-GoogleCalendar/
+node authorize.js
+```
+
+Added this to config file:
+```javascript
+
+{
+    module: 'MMM-GoogleCalendar',
+    header: "Family Calendar",
+    position: "top_left",
+    config: {
+	calendars: [
+	    {
+	      symbol: "calendar-week",
+	      calendarID: "numbersandletters@group.calendar.google.com"
+	    },
+	    // add another calendar HERE if needed
+	],
+    }
+},
+```
+
 
 
 
