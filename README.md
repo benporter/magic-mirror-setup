@@ -18,6 +18,27 @@ During the install process, two questions were asked and I said 'y' to both:
 Upon completion, it printed this message:<br>
 <i>We're ready! Run pm2 start MagicMirror from the ~/MagicMirror directory to start your MagicMirror.</i>
 
+# Remote Connection
+
+To access the desktop environment of the Raspberry Pi from another computer, run these steps to enable a VNC server on the Raspberry Pi
+
+https://www.raspberrypi.com/documentation/computers/remote-access.html#enable-the-vnc-server-on-the-command-line
+
+Use using raspi-config to enable the VNC server on the command line.
+
+Open raspi-config with the following line:
+```bash
+sudo raspi-config
+```
+
+Navigate to Interface Options. Press Enter to select.
+
+Select VNC. Press Enter to select.
+
+Under "Would you like the VNC Server to be enabled?", highlight <Yes> and press Enter.
+
+Press Enter to return to the menu. Press Esc to exit raspi-config.
+
 # Module Installs
 
 After being installed (cloned from GitHub), the modules need to be configured and placed in the desired location by editing the "modules: [" object of the following file:
