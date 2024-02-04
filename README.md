@@ -129,13 +129,37 @@ Added this to config file:
     }
 },
 ```
+<b>INVALID_GRANT</b>:  this is a common error message and the bandaid is to rerun the authorization step from above, with one difference.  The token.json file created above needs to be removed first.
+
+```bash
+cd ~/MagicMirror/modules/MMM-GoogleCalendar/
+rm token.json
+node authorize.js
+```
+It may appear that the console is hung when running the last step.  ALT+Tab over to the browser and click through all of the "accepts" and "continues."  You will know this worked when the console prints your calendar entries to standard out.
+
+Unlike an update to the config file, this update isn't immedidately reflected.  If you are feeling impatient and want to see if this worked, then you can restart the MagicMirror service.  See below for instructions.
+
 
 # Stopping and Starting the MagicMirror
 To stop the MagicMirror from running, launch a terminal and run:
 
+<b>Stopping<b>
 ```bash
 cd ~/MagicMirror/installers/
 pm2 stop mm.sh
+```
+
+<b>Starting<b>
+```bash
+cd ~/MagicMirror/installers/
+pm2 start mm.sh
+```
+
+<b>Restarting<b>
+```bash
+cd ~/MagicMirror/installers/
+pm2 restart mm.sh
 ```
 
 
