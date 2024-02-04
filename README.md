@@ -130,6 +130,14 @@ Added this to config file:
 },
 ```
 
+# Stopping and Starting the MagicMirror
+To stop the MagicMirror from running, launch a terminal and run:
+
+```bash
+cd ~/MagicMirror/installers/
+pm2 stop mm.sh
+```
+
 
 
 
