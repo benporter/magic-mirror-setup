@@ -88,6 +88,39 @@ Edited the config file by adding roughly this to it:
 }
 ```
 
+<b>Traffic</b><br>
+https://github.com/saml-dev/MMM-Traffic
+
+Step 1:  Sign up for a free account at MapBox: https://account.mapbox.com/ and get an api key
+
+Step 2:  Install the module
+```bash
+cd ~/MagicMirror/modules
+git clone https://github.com/SamLewis0602/MMM-Traffic.git
+cd MMM-Traffic
+npm install
+```
+
+Edited the config file by adding roughly this to it:
+```javascript
+{
+			                {
+                    module: "MMM-Traffic",
+	            position: "bottom_right",
+	            config: {
+		             accessToken: "NumbersAndLetters,
+		             originCoords: "-8#.##,3#.##",
+		             destinationCoords: "-8#.##,3#.##",
+                             firstLine: "To Work: {duration} mins",
+                             days: [0,1,2,3,4],
+                             hoursStart: "07:00",
+                             hoursEnd: "10:00"
+	               }
+                },
+}
+```
+
+
 <b>GoogleCalendar</b><br>
 https://github.com/randomBrainstormer/MMM-GoogleCalendar
 
